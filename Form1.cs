@@ -12,6 +12,8 @@ public partial class frmRandy : Form
 
     private void Init()
     {
+        pnlBook.Visible = false;
+
         cmbMediaTypes.Items.Add("Book");
     }
 
@@ -28,7 +30,10 @@ public partial class frmRandy : Form
         }
     }
 
-    private void Book() { }
+    private void Book()
+    {
+        pnlBook.Visible = true;
+    }
 
     private void btnFormat_Click(object sender, EventArgs e)
     {
@@ -48,7 +53,7 @@ public partial class frmRandy : Form
 
     private void btnAddAuthor_Click(object sender, EventArgs e)
     {
-        if (string.IsNullOrEmpty(txtAuthors.Text))
+        if (string.IsNullOrWhiteSpace(txtAuthors.Text))
             return;
 
         authors.Add(txtAuthors.Text);

@@ -46,6 +46,7 @@ public class BookFormat : ReferenceFormat
             }
         }
 
-        return $"{formattedAuthors} {Year}. *{BookName}*. {EditionNum.AddOrdinal()}. {PubPlace}: {PubName}.";
+        string edition = EditionNum > 1 ? $"{EditionNum.AddOrdinal()} ed. " : "";
+        return $"{formattedAuthors} {Year}. *{BookName}*.{edition} {PubPlace}: {PubName}.";
     }
 }

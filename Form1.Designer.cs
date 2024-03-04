@@ -33,9 +33,10 @@
             cmbMediaTypes = new ComboBox();
             label1 = new Label();
             panel2 = new Panel();
+            btnCopy = new Button();
             redOutput = new RichTextBox();
             label2 = new Label();
-            panel3 = new Panel();
+            pnlBook = new Panel();
             btnFormat = new Button();
             spnYear = new NumericUpDown();
             label9 = new Label();
@@ -53,10 +54,9 @@
             btnAddAuthor = new Button();
             txtAuthors = new TextBox();
             label3 = new Label();
-            btnCopy = new Button();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
-            panel3.SuspendLayout();
+            pnlBook.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)spnYear).BeginInit();
             ((System.ComponentModel.ISupportInitialize)spnEdition).BeginInit();
             SuspendLayout();
@@ -104,6 +104,16 @@
             panel2.Size = new Size(321, 138);
             panel2.TabIndex = 2;
             // 
+            // btnCopy
+            // 
+            btnCopy.Location = new Point(235, 4);
+            btnCopy.Name = "btnCopy";
+            btnCopy.Size = new Size(75, 23);
+            btnCopy.TabIndex = 2;
+            btnCopy.Text = "Copy";
+            btnCopy.UseVisualStyleBackColor = true;
+            btnCopy.Click += btnCopy_Click;
+            // 
             // redOutput
             // 
             redOutput.BackColor = SystemColors.Window;
@@ -126,31 +136,31 @@
             label2.TabIndex = 0;
             label2.Text = "Output:";
             // 
-            // panel3
+            // pnlBook
             // 
-            panel3.BackColor = Color.FromArgb(224, 224, 224);
-            panel3.BorderStyle = BorderStyle.FixedSingle;
-            panel3.Controls.Add(btnFormat);
-            panel3.Controls.Add(spnYear);
-            panel3.Controls.Add(label9);
-            panel3.Controls.Add(txtPubName);
-            panel3.Controls.Add(label8);
-            panel3.Controls.Add(txtPubPlace);
-            panel3.Controls.Add(label7);
-            panel3.Controls.Add(spnEdition);
-            panel3.Controls.Add(label6);
-            panel3.Controls.Add(label5);
-            panel3.Controls.Add(label4);
-            panel3.Controls.Add(txtBookName);
-            panel3.Controls.Add(redAuthors);
-            panel3.Controls.Add(btnClearAuthors);
-            panel3.Controls.Add(btnAddAuthor);
-            panel3.Controls.Add(txtAuthors);
-            panel3.Controls.Add(label3);
-            panel3.Location = new Point(12, 56);
-            panel3.Name = "panel3";
-            panel3.Size = new Size(321, 323);
-            panel3.TabIndex = 3;
+            pnlBook.BackColor = Color.FromArgb(224, 224, 224);
+            pnlBook.BorderStyle = BorderStyle.FixedSingle;
+            pnlBook.Controls.Add(btnFormat);
+            pnlBook.Controls.Add(spnYear);
+            pnlBook.Controls.Add(label9);
+            pnlBook.Controls.Add(txtPubName);
+            pnlBook.Controls.Add(label8);
+            pnlBook.Controls.Add(txtPubPlace);
+            pnlBook.Controls.Add(label7);
+            pnlBook.Controls.Add(spnEdition);
+            pnlBook.Controls.Add(label6);
+            pnlBook.Controls.Add(label5);
+            pnlBook.Controls.Add(label4);
+            pnlBook.Controls.Add(txtBookName);
+            pnlBook.Controls.Add(redAuthors);
+            pnlBook.Controls.Add(btnClearAuthors);
+            pnlBook.Controls.Add(btnAddAuthor);
+            pnlBook.Controls.Add(txtAuthors);
+            pnlBook.Controls.Add(label3);
+            pnlBook.Location = new Point(12, 56);
+            pnlBook.Name = "pnlBook";
+            pnlBook.Size = new Size(321, 323);
+            pnlBook.TabIndex = 3;
             // 
             // btnFormat
             // 
@@ -323,22 +333,12 @@
             label3.TabIndex = 1;
             label3.Text = "Reference Information:";
             // 
-            // btnCopy
-            // 
-            btnCopy.Location = new Point(235, 4);
-            btnCopy.Name = "btnCopy";
-            btnCopy.Size = new Size(75, 23);
-            btnCopy.TabIndex = 2;
-            btnCopy.Text = "Copy";
-            btnCopy.UseVisualStyleBackColor = true;
-            btnCopy.Click += btnCopy_Click;
-            // 
             // frmRandy
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(668, 391);
-            Controls.Add(panel3);
+            Controls.Add(pnlBook);
             Controls.Add(panel2);
             Controls.Add(panel1);
             Icon = (Icon)resources.GetObject("$this.Icon");
@@ -349,8 +349,8 @@
             panel1.PerformLayout();
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
-            panel3.ResumeLayout(false);
-            panel3.PerformLayout();
+            pnlBook.ResumeLayout(false);
+            pnlBook.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)spnYear).EndInit();
             ((System.ComponentModel.ISupportInitialize)spnEdition).EndInit();
             ResumeLayout(false);
@@ -363,7 +363,7 @@
         private Panel panel2;
         private Label label2;
         private RichTextBox redOutput;
-        private Panel panel3;
+        private Panel pnlBook;
         private Label label3;
         private TextBox txtAuthors;
         private Button btnAddAuthor;
