@@ -2,6 +2,8 @@ namespace Randy_The_Referencer;
 
 public partial class frmRandy : Form
 {
+    private UserControl[] userControls;
+
     public frmRandy()
     {
         InitializeComponent();
@@ -12,21 +14,23 @@ public partial class frmRandy : Form
     {
         FormatUserControl.OnFormatButton += OnFormatButton;
 
-        ucBook.Visible = false;
+        userControls = [ucBook];
+        HideAllUserControls();
+
         cmbMediaTypes.Items.Add("Book");
+        cmbMediaTypes.SelectedIndex = 0;
+    }
+
+    private void HideAllUserControls()
+    {
+        for (int i = 0; i < userControls.Length; i++)
+            userControls[i].Visible = false;
     }
 
     private void cmbMediaTypes_SelectedIndexChanged(object sender, EventArgs e)
     {
-        switch (cmbMediaTypes.SelectedIndex)
-        {
-            case 0:
-                ucBook.Visible = true;
-                break;
-
-            default:
-                break;
-        }
+        HideAllUserControls();
+        userControls[cmbMediaTypes.SelectedIndex].Visible = true;
     }
 
     private void btnCopy_Click(object sender, EventArgs e)
