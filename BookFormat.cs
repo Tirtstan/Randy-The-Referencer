@@ -26,7 +26,7 @@ public class BookFormat : ReferenceFormat
     public string PubName { get; }
     public string[] Authors { get; }
 
-    public override string ToString()
+    protected override string Format()
     {
         string formattedAuthors = "";
         for (int i = 0; i < Authors.Length; i++)

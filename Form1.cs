@@ -18,6 +18,7 @@ public partial class frmRandy : Form
         HideAllUserControls();
 
         cmbMediaTypes.Items.Add("Book");
+        cmbMediaTypes.Items.Add("YouTube (Offline)");
         cmbMediaTypes.SelectedIndex = 0;
     }
 
