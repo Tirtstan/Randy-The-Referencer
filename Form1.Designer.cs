@@ -37,6 +37,7 @@
             redOutput = new RichTextBox();
             label2 = new Label();
             ucBook = new ucBook();
+            ucYouTube = new ucYouTube();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
             SuspendLayout();
@@ -123,14 +124,22 @@
             ucBook.Size = new Size(321, 319);
             ucBook.TabIndex = 3;
             // 
+            // ucYouTube
+            // 
+            ucYouTube.Location = new Point(12, 60);
+            ucYouTube.Name = "ucYouTube";
+            ucYouTube.Size = new Size(321, 319);
+            ucYouTube.TabIndex = 4;
+            // 
             // frmRandy
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(668, 391);
-            Controls.Add(ucBook);
             Controls.Add(panel2);
             Controls.Add(panel1);
+            Controls.Add(ucBook);
+            Controls.Add(ucYouTube);
             Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "frmRandy";
             StartPosition = FormStartPosition.CenterScreen;
@@ -151,5 +160,6 @@
         private RichTextBox redOutput;
         private Button btnCopy;
         private ucBook ucBook;
+        private ucYouTube ucYouTube;
     }
 }

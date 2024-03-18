@@ -2,14 +2,7 @@ namespace Randy_The_Referencer;
 
 public class BookFormat : ReferenceFormat
 {
-    public BookFormat(
-        string[] authors,
-        int year,
-        string bookName,
-        int editionNum,
-        string pubPlace,
-        string pubName
-    )
+    public BookFormat(string[] authors, int year, string bookName, int editionNum, string pubPlace, string pubName)
     {
         Authors = authors;
         Year = year;

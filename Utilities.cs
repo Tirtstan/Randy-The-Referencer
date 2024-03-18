@@ -25,4 +25,32 @@ public static class Utilities
             return number + "rd";
         return number + "th";
     }
+
+    public static bool AreNullOrEmpty(params string[] strings)
+    {
+        bool valid = false;
+        foreach (var text in strings)
+        {
+            if (string.IsNullOrEmpty(text))
+                return true;
+        }
+
+        return valid;
+    }
+
+    public static string GetAPIKey(string name)
+    {
+        string? root = Directory.GetParent(Environment.CurrentDirectory)?.Parent?.Parent?.FullName;
+        if (string.IsNullOrEmpty(root))
+            return "";
+
+        string dotenv = Path.Combine(root, "API", ".env");
+        DotEnv.Load(dotenv);
+
+        string? key = Environment.GetEnvironmentVariable(name);
+        if (string.IsNullOrEmpty(key))
+            return "";
+
+        return key;
+    }
 }

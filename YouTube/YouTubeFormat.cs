@@ -1,14 +1,8 @@
 using Randy_The_Referencer;
 
-public class YouTubeOfflineFormat : ReferenceFormat
+public class YouTubeFormat : ReferenceFormat
 {
-    public YouTubeOfflineFormat(
-        string title,
-        int year,
-        string channel,
-        string link,
-        DateTime accessedWhen
-    )
+    public YouTubeFormat(string title, int year, string channel, string link, DateTime accessedWhen)
     {
         Title = title;
         Year = year;
@@ -24,5 +18,5 @@ public class YouTubeOfflineFormat : ReferenceFormat
     public DateTime AccessedWhen { get; }
 
     protected override string Format() =>
-        $"*{Title}*. {Year}. YouTube video, added by {Channel}. [Online]. Available at: {Link} [Accessed {AccessedWhen}:dd MMM yyy]";
+        $"*{Title}*. {Year}. YouTube video, added by {Channel}. [Online]. Available at: {Link} [Accessed {AccessedWhen:dd MMMM yyy}]";
 }

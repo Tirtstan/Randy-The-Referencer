@@ -30,6 +30,9 @@ public partial class ucBook : FormatUserControl
 
     private void btnFormat_Click(object sender, EventArgs e)
     {
+        if (Utilities.AreNullOrEmpty(txtBookName.Text, txtPubPlace.Text, txtPubName.Text))
+            return;
+
         BookFormat bookFormat =
             new(
                 authors.ToArray(),

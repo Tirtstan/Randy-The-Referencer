@@ -7,18 +7,14 @@ public partial class frmRandy : Form
     public frmRandy()
     {
         InitializeComponent();
-        Init();
-    }
 
-    private void Init()
-    {
         FormatUserControl.OnFormatButton += OnFormatButton;
 
-        userControls = [ucBook];
+        userControls = [ucBook, ucYouTube];
         HideAllUserControls();
 
         cmbMediaTypes.Items.Add("Book");
-        cmbMediaTypes.Items.Add("YouTube (Offline)");
+        cmbMediaTypes.Items.Add("YouTube");
         cmbMediaTypes.SelectedIndex = 0;
     }
 
