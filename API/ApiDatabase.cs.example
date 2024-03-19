@@ -1,0 +1,6 @@
+namespace Randy_The_Referencer;
+
+public static class ApiDatabase
+{
+    public static string YouTube_API_KEY { get; } = "your api key";
+}

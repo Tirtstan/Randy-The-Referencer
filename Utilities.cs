@@ -65,20 +65,4 @@ public static class Utilities
 
         return valid;
     }
-
-    public static string GetAPIKey(string name)
-    {
-        string? root = Directory.GetParent(Environment.CurrentDirectory)?.Parent?.Parent?.FullName;
-        if (string.IsNullOrEmpty(root))
-            return "";
-
-        string dotenv = Path.Combine(root, "API", ".env");
-        DotEnv.Load(dotenv);
-
-        string? key = Environment.GetEnvironmentVariable(name);
-        if (string.IsNullOrEmpty(key))
-            return "";
-
-        return key;
-    }
 }
