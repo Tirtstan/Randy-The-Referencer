@@ -8,6 +8,7 @@ public static class YouTubeHelper
 {
     public static bool IsYouTubeInitialized { get; private set; }
     public static YouTubeService YouTubeService { get; private set; }
+    private static string[] validHosts = { "youtube.com", "youtu.be", "www.youtube.com" };
 
     public static bool IsYouTubeLink(string link)
     {
@@ -15,7 +16,7 @@ public static class YouTubeHelper
         try
         {
             string host = new Uri(link).Host.ToLower();
-            valid = host == "youtube.com" || host == "youtu.be";
+            valid = validHosts.Contains(host);
         }
         catch
         {

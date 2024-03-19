@@ -36,10 +36,10 @@ public partial class frmRandy : Form
             Clipboard.SetDataObject(redOutput.Text);
     }
 
-    private void OnFormatButton(string output)
+    private void OnFormatButton(string format, string paraphrased, string quote)
     {
-        redOutput.Clear();
-        redOutput.Text = output;
+        redOutput.Text = format;
+        redInfo.Text = $"In-Text Paraphrase:\n\n{paraphrased}\n\nIn-Text Quote:\n\n{quote}";
     }
 
     ~frmRandy()

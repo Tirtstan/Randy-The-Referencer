@@ -38,8 +38,12 @@
             label2 = new Label();
             ucBook = new ucBook();
             ucYouTube = new ucYouTube();
+            panel3 = new Panel();
+            label3 = new Label();
+            redInfo = new RichTextBox();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
+            panel3.SuspendLayout();
             SuspendLayout();
             // 
             // panel1
@@ -50,14 +54,14 @@
             panel1.Controls.Add(label1);
             panel1.Location = new Point(12, 12);
             panel1.Name = "panel1";
-            panel1.Size = new Size(321, 38);
+            panel1.Size = new Size(321, 42);
             panel1.TabIndex = 1;
             // 
             // cmbMediaTypes
             // 
             cmbMediaTypes.DropDownStyle = ComboBoxStyle.DropDownList;
             cmbMediaTypes.FormattingEnabled = true;
-            cmbMediaTypes.Location = new Point(130, 7);
+            cmbMediaTypes.Location = new Point(130, 9);
             cmbMediaTypes.Name = "cmbMediaTypes";
             cmbMediaTypes.Size = new Size(180, 23);
             cmbMediaTypes.TabIndex = 1;
@@ -67,7 +71,7 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 9F, FontStyle.Underline);
-            label1.Location = new Point(11, 10);
+            label1.Location = new Point(9, 12);
             label1.Name = "label1";
             label1.Size = new Size(115, 15);
             label1.TabIndex = 0;
@@ -131,11 +135,45 @@
             ucYouTube.Size = new Size(321, 319);
             ucYouTube.TabIndex = 4;
             // 
+            // panel3
+            // 
+            panel3.BackColor = Color.FromArgb(224, 224, 224);
+            panel3.BorderStyle = BorderStyle.FixedSingle;
+            panel3.Controls.Add(label3);
+            panel3.Controls.Add(redInfo);
+            panel3.Location = new Point(339, 12);
+            panel3.Name = "panel3";
+            panel3.Size = new Size(321, 223);
+            panel3.TabIndex = 5;
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Font = new Font("Segoe UI", 9F, FontStyle.Underline);
+            label3.Location = new Point(13, 11);
+            label3.Name = "label3";
+            label3.Size = new Size(73, 15);
+            label3.TabIndex = 1;
+            label3.Text = "Information:";
+            // 
+            // redInfo
+            // 
+            redInfo.BackColor = SystemColors.Window;
+            redInfo.BorderStyle = BorderStyle.None;
+            redInfo.Location = new Point(11, 35);
+            redInfo.Name = "redInfo";
+            redInfo.ReadOnly = true;
+            redInfo.ScrollBars = RichTextBoxScrollBars.Vertical;
+            redInfo.Size = new Size(299, 174);
+            redInfo.TabIndex = 0;
+            redInfo.Text = "";
+            // 
             // frmRandy
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(668, 391);
+            Controls.Add(panel3);
             Controls.Add(panel2);
             Controls.Add(panel1);
             Controls.Add(ucBook);
@@ -148,6 +186,8 @@
             panel1.PerformLayout();
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
+            panel3.ResumeLayout(false);
+            panel3.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -161,5 +201,8 @@
         private Button btnCopy;
         private ucBook ucBook;
         private ucYouTube ucYouTube;
+        private Panel panel3;
+        private Label label3;
+        private RichTextBox redInfo;
     }
 }

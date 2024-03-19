@@ -15,22 +15,22 @@ public partial class ucYouTube : FormatUserControl
 
     private void btnFormat_Click(object sender, EventArgs e)
     {
-        YouTubeFormat youTubeOfflineFormat =
+        YouTubeFormat youTubeFormat =
             new(txtTitle.Text, (int)spnYear.Value, txtChannel.Text, txtLink.Text, dtpAccessedWhen.Value);
 
-        FormatButton(youTubeOfflineFormat.ToString());
+        FormatButton(youTubeFormat.ToString(), youTubeFormat.GetParaphrased(), youTubeFormat.GetQuote());
     }
 
     private void btnFillInformation_Click(object sender, EventArgs e)
     {
-        if (string.IsNullOrWhiteSpace(txtLink.Text) || !YouTubeHelper.IsYouTubeLink(txtLink.Text))
-        {
-            MessageBox.Show($"Not a valid YouTube link.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            return;
-        }
-
         if (previousLink == txtLink.Text)
             return;
+
+        if (string.IsNullOrWhiteSpace(txtLink.Text) || !YouTubeHelper.IsYouTubeLink(txtLink.Text))
+        {
+            MessageBox.Show("Not a valid YouTube link.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            return;
+        }
 
         if (!YouTubeHelper.IsYouTubeInitialized)
         {

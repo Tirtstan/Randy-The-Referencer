@@ -43,6 +43,6 @@ public partial class ucBook : FormatUserControl
                 txtPubName.Text
             );
 
-        FormatButton(bookFormat.ToString());
+        FormatButton(bookFormat.ToString(), bookFormat.GetParaphrased(), bookFormat.GetQuote());
     }
 }

@@ -19,4 +19,8 @@ public class YouTubeFormat : ReferenceFormat
 
     protected override string Format() =>
         $"*{Title}*. {Year}. YouTube video, added by {Channel}. [Online]. Available at: {Link} [Accessed {AccessedWhen:dd MMMM yyy}]";
+
+    public override string GetParaphrased() => $"... (see {Title}, {Year})";
+
+    public override string GetQuote() => "N/A";
 }

@@ -8,6 +8,34 @@ public static class Utilities
         return $"{names[1]}, {names[0][..1]}.";
     }
 
+    public static string GetSurname(string name)
+    {
+        string[] names = name.Split(" ");
+        return names[1];
+    }
+
+    public static string ListNames(string[] names, string endingWith)
+    {
+        string output = "";
+        for (int i = 0; i < names.Length; i++)
+        {
+            if (i == 0)
+            {
+                output += $"{names[i]}";
+            }
+            else if (i == names.Length - 1)
+            {
+                output += $" {endingWith} {names[i]}";
+            }
+            else
+            {
+                output += $", {names[i]}";
+            }
+        }
+
+        return output;
+    }
+
     public static string AddOrdinal(this int num)
     {
         string number = num.ToString();
